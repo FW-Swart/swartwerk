@@ -22,16 +22,16 @@ use Illuminate\Support\Facades\Route;
 // Test Views
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 // Main Views
 Route::get('/enter', function () {
     return view('main/enter');
-});
+})->name('enter');
 
 Route::get('/home', function () {
     return view('main/home');
-});
+})->name('home');
 
 /*
 |--------------------------------------------------------------------------
