@@ -3800,7 +3800,40 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
+__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); // gallery carousel
+
+
+function carousel() {
+  return {
+    active: 0,
+    init: function init() {
+      var _this = this;
+
+      var flkty = new Flickity(this.$refs.carousel, {
+        wrapAround: true
+      });
+      flkty.on('change', function (i) {
+        return _this.active = i;
+      });
+    }
+  };
+}
+
+function carouselFilter() {
+  return {
+    active: 0,
+    changeActive: function changeActive(i) {
+      var _this2 = this;
+
+      this.active = i;
+      this.$nextTick(function () {
+        var flkty = Flickity.data(_this2.$el.querySelectorAll('.carousel')[i]);
+        flkty.resize();
+        console.log(flkty);
+      });
+    }
+  };
+}
 
 /***/ }),
 

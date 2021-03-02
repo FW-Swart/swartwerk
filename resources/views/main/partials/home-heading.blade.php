@@ -1,54 +1,25 @@
-<div class="h-10 sticky top-0 bg-gray-600">
+<div class="h-10 sticky top-0 bg-gray-600 m-0">
     <h1 class="">
         home heading
     </h1>
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-gray-800">
 
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-
-            <div class="relative flex items-center justify-between h-16">
-
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <!-- Mobile menu button-->
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="hidden sm:block sm:ml-6">
-                        <div class="flex space-x-4">
-                        <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                </div>
-            </div>
-
-            <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="sm:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
-            </div>
-            </div>
-
+    <nav x-data="{show:false}" class="flex items-center justify-between flex-wrap bg-pink-500 p-6 m-0">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+            <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="#"><path d="#"/></svg>
+            <span class="font-semibold text-xl tracking-tight uppercase">Swartwerk</span>
         </div>
-
-    </nav>
+        <div class="block md:hidden">
+            <button @click="show=!show" class="flex items-center px-3 py-2 border rounded text-gray-100 border-gray-200 hover:text-green hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+        </div>
+        <div @click.away="show = false" :class="{ 'block': show, 'hidden': !show }" class="w-full block flex-grow md:flex md:justify-end md:w-auto">
+            <div>
+            <a href="home" class="block md:inline-block text-sm px-4 py-2 leading-none rounded border-white hover:border-transparent hover:bg-white hover:text-green mt-4 md:mt-0">Home</a>
+                <a href="projects" class="block md:inline-block text-sm px-4 py-2 leading-none rounded border-white hover:border-transparent hover:bg-white hover:text-green mt-4 md:mt-0">Projects</a>
+                <a href="gallery" class="block md:inline-block text-sm px-4 py-2 leading-none rounded border-white hover:border-transparent hover:bg-white hover:text-green mt-4 md:mt-0">Gallery</a>
+            </div>
+        </div>
+        </nav>
 
 </div>

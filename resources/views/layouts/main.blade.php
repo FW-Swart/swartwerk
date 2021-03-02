@@ -26,7 +26,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="m-auto h-full overflow-y-auto">
+            <main class="h-full overflow-y-auto bg-yellow-200">
                 @yield('content')
             </main>
 

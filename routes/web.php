@@ -33,6 +33,14 @@ Route::get('/home', function () {
     return view('main/home');
 })->name('home');
 
+Route::get('/gallery', function () {
+    return view('main/gallery');
+})->name('gallery');
+
+Route::get('/projects', function () {
+    return view('main/projects');
+})->name('projects');
+
 /*
 |--------------------------------------------------------------------------
 |ADMIN GROUP

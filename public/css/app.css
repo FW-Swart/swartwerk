@@ -31433,6 +31433,12 @@ select {
           animation: bounce 1s infinite;
 }
 
+/* gallery carousel */
+
+.flickity-viewport {
+  height: 500px !important;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
